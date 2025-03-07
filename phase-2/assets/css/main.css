@@ -37,5 +37,16 @@ footer{
 
 /*CSS for desktop*/
 @media screen and (min-width: 1200px) {
+    .header{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+    }
+
+    nav{
+        display: block;
+        grid-column: span;
+    }
 
 }
