@@ -1,0 +1,33 @@
+/*CSS for mobile devices*/
+body{
+    margin: 30px;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: black solid 5px;
+}
+
+.header-item{
+    padding: 10px;
+}
+
+h1{
+    font-size: 54px;
+    font-weight: bold;
+}
+
+nav{
+    display: none;
+}
+
+aside{
+    display: none;
+}
+
+/*CSS for desktop*/
+@media screen and (min-width: 1200px) {
+
+}
