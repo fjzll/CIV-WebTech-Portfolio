@@ -27,6 +27,11 @@ aside{
     display: none;
 }
 
+main{
+    border: black solid 5px;
+}
+
+
 /*CSS for desktop*/
 @media screen and (min-width: 1200px) {
 
