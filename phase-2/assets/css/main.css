@@ -1,6 +1,6 @@
 /*CSS for mobile devices*/
 body{
-    margin: 30px;
+    margin: 50px;
 }
 
 .header{
@@ -19,7 +19,7 @@ h1{
     font-weight: bold;
 }
 
-nav{
+.header-nav{
     display: none;
 }
 
@@ -31,12 +31,40 @@ main{
     border: black solid 5px;
 }
 
+
 footer{
     border: black solid 5px;
+    font-size: 32px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
 }
 
+footer p {
+    text-align: center;
+}
+
+.footer-nav-item{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.footer-nav-item:first-child::after{
+    content: "|";
+    margin-left: 20px;
+    color: black;
+}
+
+.footer-nav-item:nth-child(2)::after{
+    content: "|";
+    margin-left: 20px;
+    color: black;
+}
+
+
 /*CSS for desktop*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1024px) {
     .header{
         display: grid;
         grid-template-columns: auto 1fr;
@@ -44,7 +72,7 @@ footer{
         align-items: center;
     }
 
-    nav{
+    .header-nav{
         display: block;
         font-size: 20px;
         grid-column: span;
@@ -59,4 +87,26 @@ footer{
         max-width: 90vw;
         margin: 0 auto;
     }
+
+    footer{
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-evenly;
+    }
+
+
+    .nav-item{
+        text-decoration: none;
+        color: black;
+    }
+
+    .footer-nav-item{
+        text-decoration: none;
+        color: black;
+    }
+
+
 }
