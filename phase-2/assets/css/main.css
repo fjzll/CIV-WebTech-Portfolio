@@ -46,7 +46,12 @@ footer{
 
     nav{
         display: block;
+        font-size: 20px;
         grid-column: span;
+    }
+
+    .nav-item{
+        padding: 5px;
     }
 
 }
