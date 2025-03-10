@@ -31,7 +31,6 @@ main{
     border: black solid 5px;
 }
 
-
 footer{
     border: black solid 5px;
     font-size: 32px;
@@ -62,6 +61,10 @@ footer p {
     color: black;
 }
 
+article{
+    border: black solid 5px;
+    margin: 10px;
+}
 
 /*CSS for desktop*/
 @media screen and (min-width: 1024px) {
@@ -77,15 +80,16 @@ footer p {
         font-size: 20px;
         grid-column: span;
     }
+    
 
     .nav-item{
         padding: 5px;
     }
 
     main{
-        min-width: 70vw;
-        max-width: 90vw;
-        margin: 0 auto;
+/*        min-width: 70vw;
+        max-width: 90vw;*/
+        margin: 0 15vw;
     }
 
     footer{
@@ -107,6 +111,5 @@ footer p {
         text-decoration: none;
         color: black;
     }
-
 
 }
