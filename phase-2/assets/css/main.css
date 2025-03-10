@@ -139,5 +139,18 @@ h2{
         display: block;
     }
 
+    aside section {
+        border: black solid 1px;
+        padding: 5px;
+    }
 
+    aside section h3{
+        font-weight: bold;
+    }
+
+    .aside-footer{
+        border: none;
+        font-size: 12px;
+        font-weight: bold;
+    }
 }
