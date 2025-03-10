@@ -64,6 +64,7 @@ footer p {
 article{
     border: black solid 5px;
     margin: 10px;
+    padding: 10px;
 }
 
 h2{
@@ -96,7 +97,7 @@ h2{
         margin: 0 15vw;
         display: grid;
         grid-template-columns: 2fr 2fr 1fr;
-        grid-template-rows: auto 1fr;
+        grid-template-rows: repeat(2, 1fr);
         gap: 10px;
     }
 
@@ -142,6 +143,10 @@ h2{
     aside section {
         border: black solid 1px;
         padding: 5px;
+    }
+
+    aside section:last-child{
+        border: none;
     }
 
     aside section h3{
