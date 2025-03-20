@@ -14,6 +14,8 @@ body{
 .header{
     grid-area: header;
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
     align-items: center;
     padding: 10px;
     border: black solid 5px;
@@ -33,6 +35,40 @@ body{
 h1{
     font-size: 54px;
     font-weight: bold;
+}
+
+.header-nav-button{
+    background-color: white;
+    border: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.header-nav-icon,
+.header-nav-icon::before,
+.header-nav-icon::after{
+    background-color: black;
+    width: 60px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.header-nav-icon::before,
+.header-nav-icon::after{
+    content: "";
+}
+
+.header-nav-icon::before{
+    transform: translate(-30px, -20px);
+}
+
+.header-nav-icon::after{
+    transform: translate(-30px, 20px);
 }
 
 .header-nav{
@@ -112,13 +148,16 @@ h2{
         position: fixed;
     }
 
+    .header-nav-button{
+        display: none;
+    }
+
     .header-nav{
         display: block;
         font-size: 25px;
         grid-column: 1 /span 2;
         text-align: center;
     }
-    
 
     .nav-item{
         padding: 5px;
