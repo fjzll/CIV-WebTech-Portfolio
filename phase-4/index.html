@@ -5,6 +5,7 @@
     <title>Web Tech Portfolio</title>
     <link rel="stylesheet" href="assets/css/meyer-reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <script defer src="assets/js/main.js"></script>
 </head>
 <body>
     <header class="header">
@@ -77,44 +78,40 @@
             <img src="../assets/img/markus-spiske-94P6pStoE84-unsplash.jpg"
                  alt="Markus" width="400" height="300">
         </article>
-        <article id="instruction">
+        <article id="api">
             <header>
-                <h2>The stories just keep coming in.</h2>
+                <h2>Ninja API APP</h2>
             </header>
-            <section>
-                <h3>
-                    TUTORING THE TUTOR
-                </h3>
-                <p>
-                    Neil Meyers, library assistant from Gilles Plains in SA, recalls an incident
-                    with a part-time computer lecturer a couple of years ago.
-                </p>
-                <p>
-                    "I work in a vocational education library, and, on night shift, library staff are
-                    the default computer technicians/troubleshooters. One night, this part-time
-                    lecturer came to the counter, stating that she'd managed to get a CD-ROM disc
-                    stuck in the drive. She also said she felt a bit foolish, because she was
-                    instructing a class in basic computing and was unable to solve the problem in
-                    front of a room full of students.
-                </p>
-                <p>
-                    So I wandered over to give her assistance, pushed the drive eject button, out
-                    popped the tray and... no disc to be seen.
-                </p>
-            </section>
-            <section>
-                <h3>
-                    THAT IS THE CD DRIVE?
-                </h3>
-                <p>
-                    Before I was able to ask out the obvious question, she piped up,
-                    'That's the CD drive? I thought it was the other one!', pointing to an old 5.25in
-                    floppy disc slot, which was there even though the drives themselves had long
-                    since been decommissioned.
-                </p>
-            </section>
-            <img src="../assets/img/ben-griffiths-Bj6ENZDMSDY-unsplash.jpg"
-                 alt="Ben Griffiths" width="400" height="300">
+            <br>
+            <form>
+                <section>
+                    <h3>Pick from the following APIs</h3>
+                    <br>
+                    <p>
+                        <input type="checkbox" name="apis" id="quotes" value="quotes">
+                        <label for="quotes">Quotes</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="apis" id="jokes" value="jokes">
+                        <label for="jokes">Jokes</label>
+                    </p>
+                </section>
+                <br>
+                <section>
+                    <label for="message">How many quotes/jokes would you like:</label>
+                    <br>
+                    <br>
+                    <textarea id="message" rows="4" cols="50"></textarea>
+                    <button type="button" id="getResponseButton">Get Response</button>
+                </section>
+                <br>
+                <br>
+                <section>
+                    <h3>Hope you like the results</h3>
+                    <br>
+                    <p id="apiResponseContainer">API response will display here.</p>
+                </section>
+            </form>
         </article>
         <article id="contact">
             <header>
