@@ -1,31 +1,70 @@
-const checkboxQuotes = document.getElementById("quotes");
-const checkboxJokes = document.getElementById("jokes");
+const checkboxCats = document.getElementById("cats");
+const checkboxDogs = document.getElementById("dogs");
 const input = document.getElementById("userInput");
 const button = document.getElementById("getResponseButton");
 const responseContainer = document.getElementById("apiResponseContainer");
+const apiKey = "wHvsrUUvx1UMoeadJ17Aaw==RJ7UiFsmZQ74kaju";
+const baseURL = "https://api.api-ninjas.com/v1/";
 
-// checkbox functionality
-// one checkbox is clicked, the other is unchecked
 
+// Event handler function for check event in checkbox
 function uncheckOtherAndClearContent(checked, other) {
     other.checked = false;
     input.value = "";
     responseContainer.textContent = "";
 }
 
-
-checkboxJokes.addEventListener("change", event => {
-    if (checkboxJokes.checked) {
-        uncheckOtherAndClearContent(checkboxJokes, checkboxQuotes);
+// add event handler to the checkbox
+checkboxCats.addEventListener("change", event => {
+    if (checkboxCats.checked) {
+        uncheckOtherAndClearContent(checkboxCats, checkboxDogs);
     }
 });
 
-checkboxQuotes.addEventListener("change", event => {
-    if (checkboxQuotes.checked) {
-        uncheckOtherAndClearContent(checkboxQuotes, checkboxJokes);
+checkboxDogs.addEventListener("change", event => {
+    if (checkboxDogs.checked) {
+        uncheckOtherAndClearContent(checkboxDogs, checkboxCats);
     }
 });
+
+function fetchFromNinjaAPI(endpoint, energyLevel) {
+    const parameter = endpoint === "cats"? "playfulness" : "energy";
+    const apiURL = `${baseURL}${endpoint}?${parameter}=${energyLevel}`;
+    fetch(apiURL,{
+        headers: {
+            "x-api-key": apiKey,
+            "content-type": "application/json"
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Failed to fetch response from API");
+            }
+            return response.json();
+        })
+        .then(data=> {
+            const key = "name";
+            let output = "";
+            for (let i = 0; i < data.length; i++) {
+                const text = data[i][key];
+                output += `${text};`;
+            }
+            responseContainer.textContent = output;
+        })
+        .catch(error => {
+            responseContainer.textContent = `${error.message}`;
+        });
+}
 
 button.addEventListener("click", (event) => {
-    input.value = "";
+    const energyLevel = input.value;
+    if (checkboxCats.checked) {
+        fetchFromNinjaAPI("cats", energyLevel);
+    }
+    else if (checkboxDogs.checked) {
+        fetchFromNinjaAPI("dogs", energyLevel);
+    }
+    else{
+        responseContainer.textContent = "Please select either cats or dogs!";
+    }
 });
