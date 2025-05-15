@@ -57,13 +57,19 @@ function fetchFromNinjaAPI(endpoint, energyLevel) {
 }
 
 button.addEventListener("click", (event) => {
-    const energyLevel = input.value;
+    const energyLevel = parseInt(input.value);
+    // Handle User Input errors
+    if (!energyLevel || energyLevel <1 || energyLevel >5) {
+        responseContainer.textContent = "Error: Please enter a number between 1 and 5";
+        return;
+    }
     if (checkboxCats.checked) {
         fetchFromNinjaAPI("cats", energyLevel);
     }
     else if (checkboxDogs.checked) {
         fetchFromNinjaAPI("dogs", energyLevel);
     }
+    // Handle User Input Checkbox error
     else{
         responseContainer.textContent = "Please select either cats or dogs!";
     }
