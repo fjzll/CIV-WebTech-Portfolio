@@ -147,6 +147,30 @@ article img {
     display: block;
 }
 
+
+form section p label {
+    font-size: 36px;
+}
+
+input[type="checkbox"]{
+    width: 24px;
+    height: 24px;
+}
+
+form section:first-of-type p{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+form section button{
+    font-size: 36px;
+}
+
+form section:nth-of-type(2n) p{
+    display: flex;
+    flex-direction: column;
+}
+
 /*CSS for desktop*/
 @media screen and (min-width: 1024px) {
     body{
@@ -240,5 +264,19 @@ article img {
 
     .footer{
         grid-area: footer;
+    }
+
+    form section p label{
+        font-size: 20px;
+    }
+
+    form section button{
+        font-size: 20px;
+    }
+
+    input[type="checkbox"]{
+        width: 20px;
+        height: 20px;
+        margin-top: 10px;
     }
 }

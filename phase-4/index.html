@@ -86,7 +86,6 @@
             <form>
                 <section>
                     <h3>Pick from the following APIs</h3>
-                    <br>
                     <p>
                         <input type="checkbox" name="apis" id="quotes" value="quotes">
                         <label for="quotes">Quotes</label>
@@ -96,17 +95,21 @@
                         <label for="jokes">Jokes</label>
                     </p>
                     <br>
-                    <label for="userInput">How many quotes/jokes would you like:</label>
-                    <br>
-                    <br>
-                    <textarea id="userInput" rows="4" cols="50"></textarea>
-                    <button type="button" id="getResponseButton">Get Response</button>
                 </section>
                 <br>
+                <section>
+                    <h3>How many quotes/jokes would you like:</h3>
+                    <p>
+                        <label for="userInput">Choose between 1 and 100.</label>
+                        <br>
+                        <textarea id="userInput" rows="4" cols="50"></textarea>
+                        <br>
+                        <button type="button" id="getResponseButton">Get Response</button>
+                    </p>
+                </section>
                 <br>
                 <section>
                     <h3>Here is the result</h3>
-                    <br>
                     <p id="apiResponseContainer">API response will display here.</p>
                 </section>
             </form>
