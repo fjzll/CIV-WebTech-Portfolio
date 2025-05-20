@@ -1,6 +1,6 @@
 const checkboxCats = document.getElementById("cats");
 const checkboxDogs = document.getElementById("dogs");
-const input = document.getElementById("userInput");
+const userInput = document.getElementById("userInput");
 const button = document.getElementById("getResponseButton");
 const responseContainer = document.getElementById("apiResponseContainer");
 const apiKey = "wHvsrUUvx1UMoeadJ17Aaw==RJ7UiFsmZQ74kaju";
@@ -10,7 +10,7 @@ const baseURL = "https://api.api-ninjas.com/v1/";
 // Event handler function for check event in checkbox
 function uncheckOtherAndClearContent(checked, other) {
     other.checked = false;
-    input.value = "";
+    userInput.value = "";
     responseContainer.textContent = "";
 }
 
@@ -36,9 +36,11 @@ function fetchFromNinjaAPI(endpoint, energyLevel) {
             "content-type": "application/json"
         }
     })
-        .then(response => {
+        .then(async response => {
             if (!response.ok) {
-                throw new Error("Failed to fetch response from API");
+                const apiErrorObject = await response.json();
+                const apiMessage = apiErrorObject.error || "Unknown error";
+                throw new Error(`API Error. ${response.status}: ${apiMessage} Failed to fetch response from API`);
             }
             return response.json();
         })
@@ -57,7 +59,7 @@ function fetchFromNinjaAPI(endpoint, energyLevel) {
 }
 
 button.addEventListener("click", (event) => {
-    const energyLevel = parseInt(input.value);
+    const energyLevel = parseInt(userInput.value);
     // Handle User Input errors
     if (!energyLevel || energyLevel <1 || energyLevel >5) {
         responseContainer.textContent = "Error: Please enter a number between 1 and 5";
