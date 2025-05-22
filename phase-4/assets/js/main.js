@@ -27,9 +27,9 @@ checkboxDogs.addEventListener("change", event => {
     }
 });
 
-function fetchFromNinjaAPI(endpoint, energyLevel) {
-    const parameter = endpoint === "cats"? "playfulness" : "energy";
-    const apiURL = `${baseURL}${endpoint}?${parameter}=${energyLevel}`;
+function fetchFromNinjaAPI(checkbox, energyLevel) {
+    const parameter = checkbox === "cats"? "playfulness" : "energy";
+    const apiURL = `${baseURL}${checkbox}?${parameter}=${energyLevel}`;
     fetch(apiURL,{
         headers: {
             "x-api-key": apiKey,
